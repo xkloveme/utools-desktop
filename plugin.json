@@ -1,0 +1,24 @@
+{
+  "pluginName": "桌面云",
+  "description": "你的另一个桌面",
+  "version": "1.0.0",
+  "main": "dist/index.html",
+  "preload": "preload.js",
+  "author": "xkloveme",
+  "homepage": "https://github.com/xkloveme",
+  "logo": "icon.png",
+  "features": [
+    {
+      "code": "桌面",
+      "explain": "桌面",
+      "cmds": ["桌面", "zm", "zmy", "desktop",
+        {
+          "type": "regex",
+          "label": "桌面",
+          "match": "/[a-zA-Z\u4e00-\u9fa5]/gm",
+          "minLength": 0
+      }],
+      "icon": "icon.png"
+    }
+  ]
+}
