@@ -1,7 +1,7 @@
 <!--
  * @Author: xkloveme
  * @Date: 2021-07-19 17:09:26
- * @LastEditTime: 2021-07-26 17:06:01
+ * @LastEditTime: 2021-07-26 18:12:22
  * @LastEditors: xkloveme
  * @Description: 登录页
  * @FilePath: /utools-desktop/src/views/Home.vue
@@ -93,12 +93,12 @@
             {{ user.nickname || user_name }}
           </div>
           <div class="absolute w-72 h-40" style="pointer-events: none">
-            <div
+            <!-- <div
               ref="infinite_bar"
-              class="absolute rounded-lg"
-              style="bottom: 12px; height: 38px; width: 264px; left: 12px"
+              style="bottom:20px"
+              class="absolute rounded-lg  flex justify-center items-center py-3 px-3"
               :class="{ 'process-animation': relay, hidden: !show_loading_bar }"
-            ></div>
+            ></div> -->
           </div>
           <div class="h-full flex justify-center items-center py-3 px-3">
             <input
@@ -189,7 +189,7 @@
             "
             @click="show_keyboard_clicked()"
           >
-            <i class="text-gray-100 material-icons">keyboard</i>
+            <i class="text-gray-100 material-icons">home</i>
           </button>
           <button
             class="
@@ -313,7 +313,7 @@ export default {
           //   name: 'Desktop',
           // })
           // https://www.jixiaokang.com/utools-desktop"
-          window.utools&&window.utools.ubrowser.goto('https://cn.bing.com').run({
+          window.utools&&window.utools.ubrowser.goto('https://www.jixiaokang.com').run({
             fullscreen:true
           })
           // full screeen
@@ -395,7 +395,8 @@ export default {
       }
     },
     show_keyboard_clicked() {
-      this.show_keyboard = !this.show_keyboard
+      window.utools&&window.utools.ubrowser.goto('https://www.jixiaokang.com').run()
+      // this.show_keyboard = !this.show_keyboard
     },
     show_middle_clicked() {
       this.show_middle = !this.show_middle

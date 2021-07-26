@@ -6,6 +6,7 @@ function pathResolve(dir) {
   return resolve(__dirname, ".", dir);
 }
 export default defineConfig({
+  base: './', // 生产环境下的公共路径
   build: {
     base: './', // 生产环境下的公共路径
     outDir: './data/dist',

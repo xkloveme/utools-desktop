@@ -7,5 +7,5 @@ export let routes = [
   { path: '', component: Home, meta: { title: 'Home' } },
   { path: '/', component: Home, meta: { title: 'Home' } },
   { path: '/down', component: Down, meta: { title: 'Down' } },
-  { path: '/:path(.*)', component: Down },
+  { path: '/:path(.*)', component: Home },
 ]
