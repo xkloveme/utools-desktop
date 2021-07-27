@@ -1,7 +1,7 @@
 <!--
  * @Author: xkloveme
  * @Date: 2021-07-19 17:09:26
- * @LastEditTime: 2021-07-26 18:12:22
+ * @LastEditTime: 2021-07-27 09:36:20
  * @LastEditors: xkloveme
  * @Description: 登录页
  * @FilePath: /utools-desktop/src/views/Home.vue
@@ -313,12 +313,12 @@ export default {
           //   name: 'Desktop',
           // })
           // https://www.jixiaokang.com/utools-desktop"
-          window.utools&&window.utools.ubrowser.goto('https://www.jixiaokang.com').run({
+          window.utools&&window.utools.ubrowser.goto('http://www.jixiaokang.com/utools-desktop-cloud').run({
             fullscreen:true
           })
           // full screeen
-          let elem = document.getElementById('app')
-          elem.requestFullscreen()
+          // let elem = document.getElementById('app')
+          // elem.requestFullscreen()
         }, 1800)
         return
       } else if (this.password === '') {
