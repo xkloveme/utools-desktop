@@ -1,7 +1,7 @@
 <!--
  * @Author: xkloveme
  * @Date: 2021-07-19 17:09:26
- * @LastEditTime: 2021-07-27 09:36:20
+ * @LastEditTime: 2021-07-27 14:13:10
  * @LastEditors: xkloveme
  * @Description: 登录页
  * @FilePath: /utools-desktop/src/views/Home.vue
@@ -285,12 +285,12 @@ export default {
       return weekdays[this.date_weekday]
     },
     user() {
-       let user =window.utools && window.utools.getUser()
+      let user = window.utools && window.utools.getUser()
       return {
-        avatar:this.avatar,
+        avatar: this.avatar,
         nickname: this.user_name,
         type: 'user',
-        ...user
+        ...user,
       }
     },
   },
@@ -303,23 +303,27 @@ export default {
       if (this.password === this.password_answer) {
         // correct password
         this.login_locked = false
-        this.show_loading_bar = true
-        window.setTimeout(() => {
-          this.show_loading_bar = false
-          clearInterval(this.timer)
-          clearTimeout(this.timer2)
+        this.show_loading_bar = false
+        clearInterval(this.timer)
+        clearTimeout(this.timer2)
+        window.utools &&
+          window.utools.ubrowser
+            .goto('https://www.jixiaokang.com/utools-desktop-cloud/#/login')
+            .run({
+              show: true,
+              fullscreen: true,
+              fullscreenable: true,
+            })
+        // window.setTimeout(() => {
 
-          // this.$router.push({
-          //   name: 'Desktop',
-          // })
-          // https://www.jixiaokang.com/utools-desktop"
-          window.utools&&window.utools.ubrowser.goto('http://www.jixiaokang.com/utools-desktop-cloud').run({
-            fullscreen:true
-          })
-          // full screeen
-          // let elem = document.getElementById('app')
-          // elem.requestFullscreen()
-        }, 1800)
+        // this.$router.push({
+        //   name: 'Desktop',
+        // })
+        // https://www.jixiaokang.com/utools-desktop"
+        // full screeen
+        // let elem = document.getElementById('app')
+        // elem.requestFullscreen()
+        // }, 1800)
         return
       } else if (this.password === '') {
         this.login_locked = true
@@ -395,7 +399,8 @@ export default {
       }
     },
     show_keyboard_clicked() {
-      window.utools&&window.utools.ubrowser.goto('https://www.jixiaokang.com').run()
+      window.utools &&
+        window.utools.ubrowser.goto('https://www.jixiaokang.com').run()
       // this.show_keyboard = !this.show_keyboard
     },
     show_middle_clicked() {
@@ -444,7 +449,7 @@ export default {
         self.timer = null
         clearInterval(self.timer)
         self.$router.push({
-          path: '/down'
+          path: '/down',
         })
       }, 800)
     },
