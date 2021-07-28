@@ -9,9 +9,9 @@
   "logo": "icon.png",
   "features": [
     {
-      "code": "桌面",
-      "explain": "桌面",
-      "cmds": ["桌面", "zm", "zmy", "desktop",
+      "code": "桌面云",
+      "explain": "桌面云",
+      "cmds": ["桌面","桌面云", "zm", "zmy", "desktop",
         {
           "type": "regex",
           "label": "桌面",

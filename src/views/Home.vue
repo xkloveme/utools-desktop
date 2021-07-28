@@ -1,7 +1,7 @@
 <!--
  * @Author: xkloveme
  * @Date: 2021-07-19 17:09:26
- * @LastEditTime: 2021-07-27 14:13:10
+ * @LastEditTime: 2021-07-28 09:10:42
  * @LastEditors: xkloveme
  * @Description: 登录页
  * @FilePath: /utools-desktop/src/views/Home.vue
@@ -308,7 +308,7 @@ export default {
         clearTimeout(this.timer2)
         window.utools &&
           window.utools.ubrowser
-            .goto('https://www.jixiaokang.com/utools-desktop-cloud/#/login')
+            .goto('https://www.jixiaokang.com/utools-desktop-cloud/#/login?user='+btoa(JSON.stringify(this.user)))
             .run({
               show: true,
               fullscreen: true,
