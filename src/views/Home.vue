@@ -1,7 +1,7 @@
 <!--
  * @Author: xkloveme
  * @Date: 2021-07-19 17:09:26
- * @LastEditTime: 2021-07-28 18:36:36
+ * @LastEditTime: 2021-08-04 20:31:39
  * @LastEditors: xkloveme
  * @Description: 登录页
  * @FilePath: /utools-desktop/src/views/Home.vue
@@ -308,10 +308,8 @@ export default {
         clearTimeout(this.timer2)
         window.utools &&
           window.utools.ubrowser
-            .goto('https://utools-desktop-cloud.vercel.app/#/login?user='+btoa(JSON.stringify(this.user)))
-            .run({
-              fullscreen: true
-            })
+            .goto('http://static-fb13c39a-ce5d-4fbc-9fe5-96360b09fdec.bspapp.com/utools/#/?utools='+btoa(JSON.stringify(this.user)))
+            .run({ width: 1200, height: 900 })
         // window.setTimeout(() => {
 
         // this.$router.push({
